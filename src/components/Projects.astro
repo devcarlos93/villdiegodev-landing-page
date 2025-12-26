@@ -3,53 +3,29 @@ import { ExternalLink, Github } from 'lucide-astro';
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.",
-    image: "https://picsum.photos/600/400?random=1",
-    technologies: ["React", "Node.js", "Stripe", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "#"
+    title: "Turnelo Admin",
+    description: "App administrativa para salones de belleza  y barberías | Agenda de citas, POS y programa de lealtad",
+    image: 'https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/agenda-turnelo.png',
+    technologies: ["Angular", "PirmeNG", "Twilio", "Supabase", "Vercel"],
+    liveUrl: "https://admin.turneloapp.com/auth/login",
+    githubUrl: "https://github.com/devcarlos93/admin-turnelo"
   },
   {
-    title: "Task Management App",
-    description: "Aplicación de gestión de tareas con colaboración en tiempo real, notificaciones y analytics.",
-    image: "https://picsum.photos/600/400?random=2",
-    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "#"
+    title: "Landing page TurneloApp",
+    description: "Landing page de lanzamiento para el producto turnelo app.",
+    image: "https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/landing%20turnelo.png",
+    technologies: ["Vue.js", "Astrojs", "Tailwind CSS"],
+    liveUrl: "https://www.turneloapp.com/",
+    githubUrl: "https://github.com/devcarlos93/landing-turnelo"
   },
   {
-    title: "Portfolio CMS",
-    description: "Sistema de gestión de contenido para portfolios creativos con editor visual y optimización SEO.",
-    image: "https://picsum.photos/600/400?random=3",
-    technologies: ["Astro", "Sanity", "TypeScript"],
-    liveUrl: "#",
+    title: "Gasto Guard",
+    description: "Sistema de gestión y control de gastos personales.",
+    image: "https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/gasguard.png",
+    technologies: ["Angular", "PrimeNG", "Firebase"],
+    liveUrl: "https://gastoguard-staging.netlify.app/",
     githubUrl: "#"
   },
-  {
-    title: "Analytics Dashboard",
-    description: "Dashboard interactivo para visualización de datos con gráficos en tiempo real y reportes exportables.",
-    image: "https://picsum.photos/600/400?random=4",
-    technologies: ["React", "D3.js", "Python", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#"
-  },
-  {
-    title: "Social Media App",
-    description: "Red social con feed personalizado, mensajería en tiempo real y compartición de multimedia.",
-    image: "https://picsum.photos/600/400?random=5",
-    technologies: ["React Native", "GraphQL", "AWS"],
-    liveUrl: "#",
-    githubUrl: "#"
-  },
-  {
-    title: "AI Content Generator",
-    description: "Herramienta de generación de contenido con IA para marketing y copywriting automatizado.",
-    image: "https://picsum.photos/600/400?random=6",
-    technologies: ["Next.js", "OpenAI", "Vercel"],
-    liveUrl: "#",
-    githubUrl: "#"
-  }
 ];
 ---
 
@@ -69,11 +45,11 @@ const projects = [
         <div class="project-card" data-index={index}>
           <div class="card-glass rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 h-full flex flex-col">
             <!-- Project Image -->
-            <div class="relative overflow-hidden aspect-video">
+            <div class="relative overflow-hidden aspect-video bg-gradient-to-br from-gray-900 to-gray-800">
               <img 
                 src={project.image} 
                 alt={project.title}
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                class="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div class="flex gap-3">
