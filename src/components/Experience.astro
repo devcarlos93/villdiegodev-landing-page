@@ -1,0 +1,103 @@
+---
+import { Briefcase, Calendar } from 'lucide-astro';
+
+const experiences = [
+  {
+    company: "Fondar Consulting",
+    role: "Desarrollador FrontEnd freelance",
+    period: "Junio 2023 - Actualidad",
+    description: "Experiencia en desarrollo frontend con Angular para aplicaciones empresariales de alta complejidad. Trabajo con PrimeNG para interfaces consistentes, implementación de validaciones avanzadas, manejo de peticiones HTTP concurrentes (forkJoin), y estados de carga. Integración con servicios externos como Meta Pixel y sistemas de pago.",
+    technologies: ["Angular", "PrimeNG", "TypeScript", "RxJS"]
+  },
+  {
+    company: "Dr. Robot Tech",
+    role: "Desarrollador FrontEnd",
+    period: "Febrero 2023 - Mayo 2023",
+    description: "Desarrollo de sistema administrativo con AdminLTE y JavaScript vanilla. Implementación de módulos de gestión, tablas dinámicas, y lógica de interacción sin dependencia de frameworks.",
+    technologies: ["JavaScript", "AdminLTE", "HTML", "CSS"]
+  }
+];
+---
+
+<section id="experiencia" class="py-20 relative">
+  <div class="section-container">
+    <!-- Section Title -->
+    <div class="text-center mb-16 section-title">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Mi <span class="gradient-text">Experiencia</span>
+      </h2>
+      <p class="text-xl text-white/60">Trayectoria profesional</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-8">
+        {experiences.map((exp, index) => (
+          <div class="experience-item" data-index={index}>
+            <div class="grid md:grid-cols-[200px,1fr] gap-6">
+              <!-- Timeline Marker -->
+              <div class="flex items-start gap-4">
+                <div class="timeline-marker">
+                  <div class="w-4 h-4 rounded-full bg-gradient-to-br from-orange-500 to-orange-600"></div>
+                  <div class="timeline-line"></div>
+                </div>
+                <div class="text-white/60 flex items-center gap-2">
+                  <Calendar size={16} />
+                  <span class="text-sm font-medium">{exp.period}</span>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="card-glass p-6 rounded-xl hover:border-orange-500/30 transition-all duration-300">
+                <div class="flex items-start gap-3 mb-3">
+                  <div class="p-2 bg-gradient-to-br from-orange-500/20 to-cyan-500/20 rounded-lg">
+                    <Briefcase size={20} class="text-orange-500" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-1">{exp.role}</h3>
+                    <p class="text-white/70 font-medium">{exp.company}</p>
+                  </div>
+                </div>
+
+                <p class="text-white/60 mb-4 leading-relaxed">
+                  {exp.description}
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  {exp.technologies.map((tech) => (
+                    <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-marker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-line {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, 
+      rgba(255, 107, 53, 0.5) 0%, 
+      rgba(255, 107, 53, 0) 100%
+    );
+    margin-top: 8px;
+  }
+
+  .experience-item:last-child .timeline-line {
+    display: none;
+  }
+</style>

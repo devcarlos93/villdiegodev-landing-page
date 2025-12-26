@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://villadiegocode.netlify.app/sitemap-index.xml

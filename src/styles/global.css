@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Primary Gradient Colors */
+    --color-primary-start: #FF6B35;
+    --color-primary-end: #F7931E;
+    
+    /* Secondary Blue Gradient */
+    --color-secondary-start: #00C9FF;
+    --color-secondary-end: #0090C1;
+    
+    /* Base Colors */
+    --color-dark-base: #1A1A2E;
+    --color-light-accent: #EAEAEA;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #0F3460;
+    
+    /* Spacing */
+    --section-padding: 5rem;
+    --section-padding-mobile: 3rem;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--color-dark-base);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, var(--color-secondary-start), var(--color-secondary-end));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--section-padding) 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .section-container {
+      padding: var(--section-padding-mobile) 1.5rem;
+    }
+  }
+
+  .card-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-300;
+    background: transparent;
+    border: 2px solid var(--color-primary-start);
+    color: var(--color-primary-start);
+  }
+
+  .btn-secondary:hover {
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+    color: white;
+  }
+}
+
+@utility scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}

@@ -1,0 +1,137 @@
+---
+import { ExternalLink, Github } from 'lucide-astro';
+
+const projects = [
+  {
+    title: "E-Commerce Platform",
+    description: "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.",
+    image: "https://picsum.photos/600/400?random=1",
+    technologies: ["React", "Node.js", "Stripe", "MongoDB"],
+    liveUrl: "#",
+    githubUrl: "#"
+  },
+  {
+    title: "Task Management App",
+    description: "Aplicación de gestión de tareas con colaboración en tiempo real, notificaciones y analytics.",
+    image: "https://picsum.photos/600/400?random=2",
+    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+    liveUrl: "#",
+    githubUrl: "#"
+  },
+  {
+    title: "Portfolio CMS",
+    description: "Sistema de gestión de contenido para portfolios creativos con editor visual y optimización SEO.",
+    image: "https://picsum.photos/600/400?random=3",
+    technologies: ["Astro", "Sanity", "TypeScript"],
+    liveUrl: "#",
+    githubUrl: "#"
+  },
+  {
+    title: "Analytics Dashboard",
+    description: "Dashboard interactivo para visualización de datos con gráficos en tiempo real y reportes exportables.",
+    image: "https://picsum.photos/600/400?random=4",
+    technologies: ["React", "D3.js", "Python", "PostgreSQL"],
+    liveUrl: "#",
+    githubUrl: "#"
+  },
+  {
+    title: "Social Media App",
+    description: "Red social con feed personalizado, mensajería en tiempo real y compartición de multimedia.",
+    image: "https://picsum.photos/600/400?random=5",
+    technologies: ["React Native", "GraphQL", "AWS"],
+    liveUrl: "#",
+    githubUrl: "#"
+  },
+  {
+    title: "AI Content Generator",
+    description: "Herramienta de generación de contenido con IA para marketing y copywriting automatizado.",
+    image: "https://picsum.photos/600/400?random=6",
+    technologies: ["Next.js", "OpenAI", "Vercel"],
+    liveUrl: "#",
+    githubUrl: "#"
+  }
+];
+---
+
+<section id="proyectos" class="py-20 relative">
+  <div class="section-container">
+    <!-- Section Title -->
+    <div class="text-center mb-16 section-title">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Mis <span class="gradient-text">Proyectos</span>
+      </h2>
+      <p class="text-xl text-white/60">Trabajos destacados</p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid">
+      {projects.map((project, index) => (
+        <div class="project-card" data-index={index}>
+          <div class="card-glass rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 h-full flex flex-col">
+            <!-- Project Image -->
+            <div class="relative overflow-hidden aspect-video">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div class="flex gap-3">
+                  <a 
+                    href={project.liveUrl} 
+                    class="p-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors"
+                    aria-label="Ver proyecto"
+                  >
+                    <ExternalLink size={20} />
+                  </a>
+                  <a 
+                    href={project.githubUrl} 
+                    class="p-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors"
+                    aria-label="Ver código"
+                  >
+                    <Github size={20} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Info -->
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-xl font-bold mb-2">{project.title}</h3>
+              <p class="text-white/60 text-sm mb-4 flex-1">
+                {project.description}
+              </p>
+
+              <!-- Technologies -->
+              <div class="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a href="#" class="btn-primary inline-flex items-center gap-2">
+        Ver Más Proyectos
+        <ExternalLink size={18} />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  #proyectos {
+    background: linear-gradient(180deg, 
+      rgba(26, 26, 46, 1) 0%, 
+      rgba(255, 107, 53, 0.05) 50%,
+      rgba(26, 26, 46, 1) 100%
+    );
+  }
+</style>

@@ -1,22 +1,106 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Carlos Villadiego - Front End Developer | Angular & Ionic Specialist", 
+  description = "Desarrollador Frontend especializado en Angular e Ionic. Construyendo aplicaciones empresariales robustas con código limpio y arquitectura mantenible." 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL('/profile.png', Astro.site);
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Carlos Villadiego" />
+    <meta name="keywords" content="Carlos Villadiego, Frontend Developer, Angular Developer, Ionic Developer, Desarrollador Frontend, Angular, Ionic, TypeScript, PrimeNG, Flutter, Montería Colombia" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Carlos Villadiego Portfolio" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Astro Generator -->
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Language -->
+    <meta http-equiv="content-language" content="es" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#FF6B35" />
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Carlos Villadiego",
+        "jobTitle": "Front End Developer",
+        "description": "Desarrollador Frontend especializado en Angular e Ionic",
+        "url": "https://villadiegocode.netlify.app",
+        "image": "https://villadiegocode.netlify.app/profile.png",
+        "sameAs": [
+          "https://github.com/villadiego2",
+          "https://www.linkedin.com/in/carlos-villadiego/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Montería",
+          "addressCountry": "CO"
+        },
+        "knowsAbout": [
+          "Angular",
+          "Ionic",
+          "TypeScript",
+          "PrimeNG",
+          "Flutter",
+          "JavaScript",
+          "Frontend Development",
+          "UI/UX Design"
+        ],
+        "alumniOf": {
+          "@type": "Organization",
+          "name": "Fondar Consulting"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  @import "../styles/global.css";
 </style>

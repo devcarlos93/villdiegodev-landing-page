@@ -1,0 +1,170 @@
+---
+import { ChevronDown } from 'lucide-astro';
+---
+
+<section id="inicio" class="min-h-screen relative overflow-hidden flex items-center justify-center">
+  <!-- Main Background Gradient -->
+  <div class="absolute inset-0 hero-gradient"></div>
+  
+  <!-- Organic Shapes Layer -->
+  <div class="absolute inset-0 overflow-hidden">
+    <!-- Large Orange Blob -->
+    <div class="absolute -top-40 -right-40 w-[800px] h-[800px] bg-gradient-to-br from-orange-600 via-orange-500 to-red-600 rounded-[40%] opacity-80 blur-2xl animate-float"></div>
+    
+    <!-- Bottom Left Orange Shape -->
+    <div class="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-gradient-to-tr from-orange-500 via-red-500 to-orange-400 rounded-[45%] opacity-70 blur-xl animate-float-delayed"></div>
+    
+    <!-- Cyan Accent -->
+    <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-to-bl from-cyan-400 via-cyan-500 to-blue-500 rounded-[50%] opacity-40 blur-3xl animate-float-slow"></div>
+    
+    <!-- Additional Orange Layer -->
+    <div class="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-gradient-to-tl from-orange-400 to-red-500 rounded-[48%] opacity-60 blur-2xl" style="animation: float-delayed 10s ease-in-out infinite;"></div>
+  </div>
+  
+  <!-- Overlay for depth -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30"></div>
+
+  <div class="section-container relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Content -->
+      <div class="space-y-6 hero-content">
+        <div class="space-y-2">
+          <p class="text-lg md:text-xl text-white/60 font-medium">Hola, soy</p>
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
+            Carlos
+            <span class="block gradient-text">Villadiego</span>
+          </h1>
+        </div>
+        
+        <p class="text-xl md:text-2xl text-white/80 font-medium">
+          Front End Developer
+        </p>
+        
+        <p class="text-lg text-white/60 max-w-xl">
+          Desarrollador frontend especializado en Angular e Ionic. Construyendo aplicaciones empresariales robustas con código limpio y arquitectura mantenible. Explorando Flutter y potenciando mi flujo de trabajo con AI.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="#proyectos" class="btn-primary">
+            Ver Proyectos
+          </a>
+          <a href="#perfil" class="btn-secondary">
+            Conocer Más
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 pt-8">
+          <div class="stat-card">
+            <div class="text-3xl md:text-4xl font-bold gradient-text">2+</div>
+            <div class="text-sm text-white/60">Años</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-3xl md:text-4xl font-bold gradient-text">10+</div>
+            <div class="text-sm text-white/60">Proyectos</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-3xl md:text-4xl font-bold gradient-text">10+</div>
+            <div class="text-sm text-white/60">Clientes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="flex justify-center hero-image">
+        <div class="relative">
+          <!-- Strong Cyan Glow on Right Side -->
+          <div class="absolute top-0 -right-20 w-96 h-96 bg-gradient-to-l from-cyan-500 via-cyan-400 to-transparent rounded-full blur-3xl opacity-60"></div>
+          
+          <!-- Orange Glow on Left -->
+          <div class="absolute top-0 -left-20 w-80 h-80 bg-gradient-to-r from-orange-500 via-orange-400 to-transparent rounded-full blur-3xl opacity-40"></div>
+          
+          <!-- Image Container with Shadow -->
+          <div class="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
+            <img 
+              src="/profile.png" 
+              alt="Carlos Villadiego"
+              class="w-full h-full object-cover"
+            />
+            <!-- Cyan Light Overlay on Image -->
+            <div class="absolute inset-0 bg-gradient-to-l from-cyan-500/30 via-transparent to-transparent"></div>
+          </div>
+          
+          <!-- Decorative Rings -->
+          <div class="absolute -inset-4 border-2 border-cyan-400/30 rounded-full"></div>
+          <div class="absolute -inset-8 border border-orange-400/20 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
+    <a href="#perfil" class="flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors">
+      <span class="text-sm">Scroll</span>
+      <ChevronDown size={24} class="animate-bounce" />
+    </a>
+  </div>
+</section>
+
+<style>
+  .hero-gradient {
+    background: linear-gradient(145deg, 
+      #1a1a2e 0%,
+      #2d1810 30%,
+      #4a1e0f 60%,
+      #1a1a2e 100%
+    );
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-30px) translateX(20px) rotate(3deg);
+    }
+    66% {
+      transform: translateY(-15px) translateX(-15px) rotate(-2deg);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-25px) translateX(-20px) rotate(-3deg);
+    }
+    66% {
+      transform: translateY(-40px) translateX(25px) rotate(2deg);
+    }
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.05);
+    }
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 10s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 12s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .stat-card {
+    text-align: center;
+  }
+</style>
