@@ -100,9 +100,8 @@ import { ChevronDown } from 'lucide-astro';
 
   <!-- Scroll Indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
-    <a href="#perfil" class="flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors">
-      <span class="text-sm">Scroll</span>
-      <ChevronDown size={24} class="animate-bounce" />
+    <a href="#perfil" class="scroll-button group">
+      <ChevronDown size={20} class="text-white/80 group-hover:text-white transition-colors" />
     </a>
   </div>
 </section>
@@ -166,5 +165,37 @@ import { ChevronDown } from 'lucide-astro';
 
   .stat-card {
     text-align: center;
+  }
+
+  .scroll-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: float-gentle 3s ease-in-out infinite;
+  }
+
+  .scroll-button:hover {
+    transform: translateY(-4px) scale(1.1);
+    background: rgba(255, 107, 53, 0.1);
+    border-color: rgba(255, 107, 53, 0.3);
+    box-shadow: 
+      0 8px 24px rgba(255, 107, 53, 0.25),
+      0 0 40px rgba(255, 107, 53, 0.15);
+  }
+
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
   }
 </style>
