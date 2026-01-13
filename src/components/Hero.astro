@@ -1,36 +1,16 @@
 ---
 import { ChevronDown } from 'lucide-astro';
+import { HeroGeometric } from './ui/shape-landing-hero';
 ---
 
-<section id="inicio" class="min-h-screen relative overflow-hidden flex items-center justify-center">
-  <!-- Main Background Gradient -->
-  <div class="absolute inset-0 hero-gradient"></div>
-  
-  <!-- Organic Shapes Layer -->
-  <div class="absolute inset-0 overflow-hidden">
-    <!-- Large Orange Blob -->
-    <div class="absolute -top-40 -right-40 w-[800px] h-[800px] bg-gradient-to-br from-orange-600 via-orange-500 to-red-600 rounded-[40%] opacity-80 blur-2xl animate-float"></div>
-    
-    <!-- Bottom Left Orange Shape -->
-    <div class="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-gradient-to-tr from-orange-500 via-red-500 to-orange-400 rounded-[45%] opacity-70 blur-xl animate-float-delayed"></div>
-    
-    <!-- Cyan Accent -->
-    <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-to-bl from-cyan-400 via-cyan-500 to-blue-500 rounded-[50%] opacity-40 blur-3xl animate-float-slow"></div>
-    
-    <!-- Additional Orange Layer -->
-    <div class="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-gradient-to-tl from-orange-400 to-red-500 rounded-[48%] opacity-60 blur-2xl" style="animation: float-delayed 10s ease-in-out infinite;"></div>
-  </div>
-  
-  <!-- Overlay for depth -->
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30"></div>
-
-  <div class="section-container relative z-10">
+<HeroGeometric client:load>
+  <div class="section-container relative z-10 w-full">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Content -->
       <div class="space-y-6 hero-content">
         <div class="space-y-2">
           <p class="text-lg md:text-xl text-white/60 font-medium">Hola, soy</p>
-          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
             Carlos
             <span class="block gradient-text">Villadiego</span>
           </h1>
@@ -99,70 +79,14 @@ import { ChevronDown } from 'lucide-astro';
   </div>
 
   <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
+  <div slot="after" class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator z-20">
     <a href="#perfil" class="scroll-button group">
       <ChevronDown size={20} class="text-white/80 group-hover:text-white transition-colors" />
     </a>
   </div>
-</section>
+</HeroGeometric>
 
 <style>
-  .hero-gradient {
-    background: linear-gradient(145deg, 
-      #1a1a2e 0%,
-      #2d1810 30%,
-      #4a1e0f 60%,
-      #1a1a2e 100%
-    );
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) translateX(0) rotate(0deg);
-    }
-    33% {
-      transform: translateY(-30px) translateX(20px) rotate(3deg);
-    }
-    66% {
-      transform: translateY(-15px) translateX(-15px) rotate(-2deg);
-    }
-  }
-
-  @keyframes float-delayed {
-    0%, 100% {
-      transform: translateY(0) translateX(0) rotate(0deg);
-    }
-    33% {
-      transform: translateY(-25px) translateX(-20px) rotate(-3deg);
-    }
-    66% {
-      transform: translateY(-40px) translateX(25px) rotate(2deg);
-    }
-  }
-
-  @keyframes float-slow {
-    0%, 100% {
-      transform: translateY(0) scale(1);
-    }
-    50% {
-      transform: translateY(-20px) scale(1.05);
-    }
-  }
-
-  .animate-float {
-    animation: float 8s ease-in-out infinite;
-  }
-
-  .animate-float-delayed {
-    animation: float-delayed 10s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-
-  .animate-float-slow {
-    animation: float-slow 12s ease-in-out infinite;
-    animation-delay: 2s;
-  }
-
   .stat-card {
     text-align: center;
   }
