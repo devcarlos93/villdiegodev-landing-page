@@ -1,0 +1,221 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LanguageToggle from '../../components/kineon/LanguageToggle.astro';
+import { FileText, Info, User, CheckCircle, Copyright, CreditCard, AlertTriangle, RefreshCw, XCircle, Scale, Mail, Shield } from 'lucide-astro';
+---
+
+<Layout 
+  title="Kineon - Términos y Condiciones | Terms and Conditions"
+  description="Términos y condiciones de uso de Kineon, la aplicación de recomendaciones de cine impulsada por inteligencia artificial."
+>
+  <div class="bg-[#0A0E1A] min-h-screen text-white">
+    <LanguageToggle />
+    
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 h-1 bg-gray-900 z-40">
+      <div id="progress-bar" class="h-full bg-[#00D9B5] transition-all duration-300" style="width: 0%"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="pt-24 pb-12 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-4 mb-12">
+          <div class="w-12 h-12 bg-[#00D9B5] rounded-xl flex items-center justify-center">
+            <span class="text-2xl">🎬</span>
+          </div>
+          <h1 class="text-3xl font-black">Kineon</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-6 pb-20">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Spanish Content -->
+        <div data-lang="es">
+          <p class="text-gray-400 italic mb-12">Última actualización: 24 de enero, 2025</p>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">1. Definiciones</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">En estos Términos y Condiciones:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li><strong class="text-white">"Kineon"</strong>, <strong class="text-white">"nosotros"</strong>, <strong class="text-white">"nos"</strong> o <strong class="text-white">"nuestro"</strong> se refiere a la aplicación Kineon y sus operadores.</li>
+              <li><strong class="text-white">"Usuario"</strong>, <strong class="text-white">"tú"</strong> o <strong class="text-white">"tu"</strong> se refiere a cualquier persona que acceda o utilice la aplicación.</li>
+              <li><strong class="text-white">"Servicio"</strong> se refiere a todas las funcionalidades ofrecidas por Kineon.</li>
+              <li><strong class="text-white">"Contenido"</strong> se refiere a información sobre películas, series, recomendaciones y cualquier otro dato mostrado en la aplicación.</li>
+            </ul>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">2. Descripción del Servicio</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Kineon es una aplicación que utiliza inteligencia artificial para:</p>
+            <ul class="space-y-3 text-gray-300 mb-6">
+              <li>• Proporcionar recomendaciones personalizadas de películas y series</li>
+              <li>• Permitir la gestión de listas de contenido (watchlist, favoritos, vistos)</li>
+              <li>• Ofrecer información sobre disponibilidad en plataformas de streaming</li>
+              <li>• Facilitar el descubrimiento de contenido basado en estados de ánimo y preferencias</li>
+            </ul>
+            
+            <div class="bg-[#1A1F2E] border border-[#00D9B5]/20 rounded-2xl p-6">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0">
+                  <div class="w-14 h-14 bg-[#00D9B5]/10 rounded-xl flex items-center justify-center">
+                    <Shield class="w-7 h-7 text-[#00D9B5]" />
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Importante</h3>
+                  <p class="text-gray-400">Kineon no proporciona acceso directo a contenido audiovisual. Únicamente ofrecemos información y enlaces a plataformas de streaming autorizadas.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">3. Registro y Cuenta</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Para utilizar ciertas funcionalidades de Kineon, debes crear una cuenta. Al hacerlo, te comprometes a:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li>• Proporcionar información veraz y actualizada</li>
+              <li>• Mantener la confidencialidad de tus credenciales de acceso</li>
+              <li>• Notificarnos inmediatamente sobre cualquier uso no autorizado de tu cuenta</li>
+              <li>• Ser responsable de todas las actividades realizadas desde tu cuenta</li>
+            </ul>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">4. Uso Aceptable</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Al utilizar Kineon, te comprometes a NO:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li>• Utilizar el servicio para fines ilegales o no autorizados</li>
+              <li>• Intentar acceder a sistemas o datos sin autorización</li>
+              <li>• Interferir con el funcionamiento normal de la aplicación</li>
+              <li>• Crear cuentas falsas o suplantar la identidad de terceros</li>
+              <li>• Utilizar bots, scrapers o herramientas automatizadas sin autorización</li>
+              <li>• Compartir contenido ofensivo, difamatorio o que viole derechos de terceros</li>
+            </ul>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">5. Propiedad Intelectual</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Todo el contenido, diseño, código, logotipos y marcas de Kineon son propiedad de sus respectivos titulares y están protegidos por leyes de propiedad intelectual.</p>
+            <p class="text-gray-300 leading-relaxed">La información sobre películas y series proviene de fuentes de terceros como TMDB (The Movie Database). Los derechos de dicho contenido pertenecen a sus respectivos propietarios.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">6. Suscripciones y Pagos</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Kineon puede ofrecer funcionalidades premium mediante suscripción. En caso de suscribirte:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li>• Los pagos se procesarán a través de la tienda de aplicaciones correspondiente (App Store/Google Play)</li>
+              <li>• Las suscripciones se renuevan automáticamente salvo cancelación previa</li>
+              <li>• Puedes cancelar tu suscripción en cualquier momento desde la configuración de tu tienda de aplicaciones</li>
+              <li>• No se realizan reembolsos por períodos parciales de suscripción</li>
+            </ul>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">7. Limitación de Responsabilidad</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Kineon se proporciona "tal cual" sin garantías de ningún tipo. No garantizamos:</p>
+            <ul class="space-y-3 text-gray-300 mb-4">
+              <li>• La precisión o actualización de la información sobre películas y series</li>
+              <li>• La disponibilidad continua o ininterrumpida del servicio</li>
+              <li>• Que el servicio cumpla con todas tus expectativas</li>
+            </ul>
+            <p class="text-gray-300 leading-relaxed">En ningún caso seremos responsables por daños indirectos, incidentales o consecuentes derivados del uso de la aplicación.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">8. Modificaciones</h2>
+            <p class="text-gray-300 leading-relaxed">Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación. El uso continuado de la aplicación después de cualquier modificación constituye tu aceptación de los nuevos términos.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">9. Terminación</h2>
+            <p class="text-gray-300 leading-relaxed">Podemos suspender o terminar tu acceso a Kineon en cualquier momento, sin previo aviso, por cualquier motivo, incluyendo el incumplimiento de estos términos. Tú también puedes eliminar tu cuenta en cualquier momento desde la configuración de la aplicación.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">10. Ley Aplicable</h2>
+            <p class="text-gray-300 leading-relaxed">Estos Términos y Condiciones se regirán e interpretarán de acuerdo con las leyes aplicables en tu jurisdicción, sin perjuicio de sus disposiciones sobre conflictos de leyes.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">11. Contacto</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Si tienes preguntas sobre estos Términos y Condiciones, puedes contactarnos en:</p>
+            <p><a href="mailto:devcarlos93@gmail.com" class="text-[#00D9B5] hover:text-[#00FFC6] underline text-lg">devcarlos93@gmail.com</a></p>
+          </section>
+
+          <!-- Back to Top Button -->
+          <div class="text-center pt-8">
+            <button id="back-to-top" class="bg-[#00D9B5] text-[#0A0E1A] px-8 py-3 rounded-full font-semibold hover:bg-[#00FFC6] transition-all inline-flex items-center gap-2">
+              <span>Volver Arriba</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 15l-6-6-6 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- English Content -->
+        <div data-lang="en" style="display: none;">
+          <p class="text-gray-400 italic mb-12">Last updated: January 24, 2025</p>
+          <div class="text-center py-20">
+            <p class="text-gray-400 text-lg">English version coming soon...</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 px-6">
+      <div class="max-w-3xl mx-auto text-center text-gray-500 text-sm space-y-3">
+        <p>© 2025 Kineon. Todos los derechos reservados.</p>
+        <div>
+          <a href="/trackio/politica-de-privacidad" class="text-[#00D9B5] hover:text-[#00FFC6] underline">Política de Privacidad</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Progress bar animation
+  const updateProgressBar = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+      progressBar.style.width = `${scrollPercent}%`;
+    }
+  };
+
+  window.addEventListener('scroll', updateProgressBar);
+
+  // Animate sections on scroll
+  gsap.utils.toArray('section').forEach((section: any, index: number) => {
+    gsap.from(section, {
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('back-to-top');
+  backToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

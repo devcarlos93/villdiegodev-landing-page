@@ -1,0 +1,292 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LanguageToggle from '../../components/kineon/LanguageToggle.astro';
+import { Shield, Database, Users, Lock, Eye, Download, Globe, AlertTriangle, Scale, Baby, FileText, Mail } from 'lucide-astro';
+---
+
+<Layout 
+  title="Kineon - Política de Privacidad | Privacy Policy"
+  description="Política de privacidad de Kineon. Conoce cómo recopilamos, usamos y protegemos tu información personal."
+>
+  <div class="bg-[#0A0E1A] min-h-screen text-white">
+    <LanguageToggle />
+    
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 h-1 bg-gray-900 z-40">
+      <div id="progress-bar" class="h-full bg-[#00D9B5] transition-all duration-300" style="width: 0%"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="pt-24 pb-12 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-4 mb-12">
+          <div class="w-12 h-12 bg-[#00D9B5] rounded-xl flex items-center justify-center">
+            <span class="text-2xl">🎬</span>
+          </div>
+          <h1 class="text-3xl font-black">Kineon</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-6 pb-20">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Spanish Content -->
+        <div data-lang="es">
+          <p class="text-gray-400 italic mb-12">Última actualización: 24 de enero, 2025</p>
+
+          <div class="mb-16">
+            <p class="text-gray-300 leading-relaxed text-lg mb-6">En Kineon, tu privacidad es nuestra prioridad. Esta Política de Privacidad explica cómo recopilamos, usamos, almacenamos y protegemos tu información personal cuando utilizas nuestra aplicación.</p>
+            
+            <div class="bg-[#1A1F2E] border border-[#00D9B5]/20 rounded-2xl p-6">
+              <p class="text-gray-300"><strong class="text-white">Resumen:</strong> Recopilamos solo la información necesaria para brindarte recomendaciones personalizadas. No vendemos tus datos a terceros y puedes eliminar tu cuenta y datos en cualquier momento.</p>
+            </div>
+          </div>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-8">1. Información que Recopilamos</h2>
+            
+            <h3 class="text-2xl font-bold mb-4">1.1 Información que nos proporcionas</h3>
+            <div class="overflow-x-auto mb-8">
+              <table class="w-full border-collapse">
+                <thead>
+                  <tr class="border-b border-gray-800">
+                    <th class="text-left py-3 px-4 text-white font-bold">Dato</th>
+                    <th class="text-left py-3 px-4 text-white font-bold">Propósito</th>
+                    <th class="text-left py-3 px-4 text-white font-bold">Tipo</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-3 px-4">Correo electrónico</td>
+                    <td class="py-3 px-4">Autenticación y comunicaciones</td>
+                    <td class="py-3 px-4"><span class="px-3 py-1 bg-[#00D9B5]/20 text-[#00D9B5] rounded-full text-xs font-semibold">Requerido</span></td>
+                  </tr>
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-3 px-4">Nombre</td>
+                    <td class="py-3 px-4">Personalización de la experiencia</td>
+                    <td class="py-3 px-4"><span class="px-3 py-1 bg-gray-700/50 text-gray-400 rounded-full text-xs font-semibold">Opcional</span></td>
+                  </tr>
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-3 px-4">Foto de perfil</td>
+                    <td class="py-3 px-4">Identificación visual</td>
+                    <td class="py-3 px-4"><span class="px-3 py-1 bg-gray-700/50 text-gray-400 rounded-full text-xs font-semibold">Opcional</span></td>
+                  </tr>
+                  <tr class="border-b border-gray-800/50">
+                    <td class="py-3 px-4">Preferencias de géneros</td>
+                    <td class="py-3 px-4">Mejores recomendaciones</td>
+                    <td class="py-3 px-4"><span class="px-3 py-1 bg-gray-700/50 text-gray-400 rounded-full text-xs font-semibold">Opcional</span></td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">País/Región</td>
+                    <td class="py-3 px-4">Disponibilidad de streaming</td>
+                    <td class="py-3 px-4"><span class="px-3 py-1 bg-gray-700/50 text-gray-400 rounded-full text-xs font-semibold">Opcional</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-2xl font-bold mb-4">1.2 Información recopilada automáticamente</h3>
+            <ul class="space-y-3 text-gray-300 mb-8">
+              <li>• <strong class="text-white">Datos de uso:</strong> Películas/series que marcas como vistas, favoritas o añades a tu watchlist</li>
+              <li>• <strong class="text-white">Interacciones:</strong> Búsquedas realizadas y recomendaciones consultadas</li>
+              <li>• <strong class="text-white">Información del dispositivo:</strong> Tipo de dispositivo, sistema operativo y versión de la app</li>
+              <li>• <strong class="text-white">Datos de diagnóstico:</strong> Registros de errores para mejorar la estabilidad</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mb-4">1.3 Información de terceros</h3>
+            <p class="text-gray-300 mb-2">Si inicias sesión con Google o Apple, recibimos:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li>• Tu correo electrónico</li>
+              <li>• Tu nombre (si está disponible)</li>
+              <li>• Tu foto de perfil (si está disponible)</li>
+            </ul>
+            <p class="text-gray-300 mt-3">No tenemos acceso a tu contraseña de estos servicios.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">2. Cómo Usamos tu Información</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Utilizamos la información recopilada para:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li>• <strong class="text-white">Proporcionar el servicio:</strong> Crear y gestionar tu cuenta, sincronizar tus listas</li>
+              <li>• <strong class="text-white">Personalizar recomendaciones:</strong> Usar IA para sugerirte contenido basado en tus gustos</li>
+              <li>• <strong class="text-white">Mejorar la aplicación:</strong> Analizar patrones de uso para optimizar funcionalidades</li>
+              <li>• <strong class="text-white">Comunicarnos contigo:</strong> Enviarte notificaciones sobre nuevos estrenos o actualizaciones importantes</li>
+              <li>• <strong class="text-white">Garantizar la seguridad:</strong> Detectar y prevenir actividades fraudulentas</li>
+            </ul>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">3. Compartición de Datos</h2>
+            <p class="text-white font-semibold mb-3">No vendemos tu información personal.</p>
+            <p class="text-gray-300 leading-relaxed mb-4">Solo compartimos datos en estos casos:</p>
+            
+            <h3 class="text-2xl font-bold mb-4">3.1 Proveedores de servicios</h3>
+            <ul class="space-y-3 text-gray-300 mb-6">
+              <li>• <strong class="text-white">Supabase:</strong> Almacenamiento de datos y autenticación</li>
+              <li>• <strong class="text-white">Sentry:</strong> Monitoreo de errores y diagnóstico</li>
+              <li>• <strong class="text-white">TMDB:</strong> Información de películas y series (no compartimos tus datos personales)</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mb-4">3.2 Requisitos legales</h3>
+            <p class="text-gray-300">Podemos divulgar información si es requerido por ley o para proteger nuestros derechos legales.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">4. Almacenamiento y Seguridad</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Tus datos se almacenan de forma segura utilizando:</p>
+            <ul class="space-y-3 text-gray-300 mb-4">
+              <li>• Encriptación en tránsito (HTTPS/TLS)</li>
+              <li>• Encriptación en reposo para datos sensibles</li>
+              <li>• Autenticación segura con tokens JWT</li>
+              <li>• Acceso restringido mediante políticas de Row Level Security</li>
+            </ul>
+            <p class="text-gray-300">Almacenamos tus datos mientras mantengas tu cuenta activa. Tras la eliminación de tu cuenta, los datos se borran en un plazo máximo de 30 días.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">5. Tus Derechos</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Tienes derecho a:</p>
+            <ul class="space-y-3 text-gray-300 mb-6">
+              <li>• <strong class="text-white">Acceder:</strong> Ver qué datos tenemos sobre ti</li>
+              <li>• <strong class="text-white">Rectificar:</strong> Corregir información incorrecta</li>
+              <li>• <strong class="text-white">Eliminar:</strong> Borrar tu cuenta y todos tus datos</li>
+              <li>• <strong class="text-white">Portabilidad:</strong> Solicitar una copia de tus datos</li>
+              <li>• <strong class="text-white">Oposición:</strong> Rechazar ciertos usos de tus datos</li>
+              <li>• <strong class="text-white">Revocar consentimiento:</strong> Retirar permisos otorgados</li>
+            </ul>
+
+            <div class="bg-[#1A1F2E] border border-[#00D9B5]/20 rounded-2xl p-6">
+              <p class="text-gray-300"><strong class="text-white">Para ejercer estos derechos:</strong> Ve a Configuración > Cuenta > Eliminar cuenta, o contáctanos en <a href="mailto:devcarlos93@gmail.com" class="text-[#00D9B5] hover:text-[#00FFC6] underline">devcarlos93@gmail.com</a></p>
+            </div>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">6. Cookies y Tecnologías Similares</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">La aplicación móvil de Kineon no utiliza cookies. Sin embargo, utilizamos:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li>• <strong class="text-white">Almacenamiento local:</strong> Para guardar preferencias y caché</li>
+              <li>• <strong class="text-white">Tokens de autenticación:</strong> Para mantener tu sesión activa</li>
+            </ul>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">7. Menores de Edad</h2>
+            <p class="text-gray-300 leading-relaxed">Kineon no está dirigido a menores de 13 años. No recopilamos intencionalmente información de niños. Si descubrimos que hemos recopilado datos de un menor, los eliminaremos inmediatamente.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">8. Transferencias Internacionales</h2>
+            <p class="text-gray-300 leading-relaxed">Tus datos pueden ser procesados en servidores ubicados fuera de tu país. Nos aseguramos de que cualquier transferencia cumpla con las leyes de protección de datos aplicables.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">9. Cambios en esta Política</h2>
+            <p class="text-gray-300 leading-relaxed">Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos sobre cambios significativos mediante la aplicación o por correo electrónico. La fecha de "última actualización" al inicio indica cuándo se realizó la última modificación.</p>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">10. Contacto</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Si tienes preguntas sobre esta Política de Privacidad o sobre cómo manejamos tus datos:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li>• <strong class="text-white">Email:</strong> <a href="mailto:devcarlos93@gmail.com" class="text-[#00D9B5] hover:text-[#00FFC6] underline">devcarlos93@gmail.com</a></li>
+              <li>• <strong class="text-white">Asunto sugerido:</strong> "Consulta de Privacidad - Kineon"</li>
+            </ul>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">11. Información para Usuarios de la UE (GDPR)</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Si resides en la Unión Europea, tienes derechos adicionales bajo el GDPR:</p>
+            <ul class="space-y-3 text-gray-300">
+              <li>• Base legal para el procesamiento: Consentimiento y ejecución del contrato</li>
+              <li>• Derecho a presentar una queja ante la autoridad de protección de datos de tu país</li>
+              <li>• Derecho a retirar el consentimiento en cualquier momento</li>
+            </ul>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">12. Información para Usuarios de California (CCPA)</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">Si resides en California, tienes derecho a:</p>
+            <ul class="space-y-3 text-gray-300 mb-4">
+              <li>• Conocer qué información personal recopilamos</li>
+              <li>• Solicitar la eliminación de tu información personal</li>
+              <li>• No ser discriminado por ejercer tus derechos de privacidad</li>
+            </ul>
+            <p class="text-white font-semibold">No vendemos información personal según la definición de la CCPA.</p>
+          </section>
+
+          <!-- Back to Top Button -->
+          <div class="text-center pt-8">
+            <button id="back-to-top" class="bg-[#00D9B5] text-[#0A0E1A] px-8 py-3 rounded-full font-semibold hover:bg-[#00FFC6] transition-all inline-flex items-center gap-2">
+              <span>Volver Arriba</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 15l-6-6-6 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- English Content -->
+        <div data-lang="en" style="display: none;">
+          <p class="text-gray-400 italic mb-12">Last updated: January 24, 2025</p>
+          <div class="text-center py-20">
+            <p class="text-gray-400 text-lg">English version coming soon...</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 px-6">
+      <div class="max-w-3xl mx-auto text-center text-gray-500 text-sm space-y-3">
+        <p>© 2025 Kineon. Todos los derechos reservados.</p>
+        <div>
+          <a href="/trackio/terminos-y-condiciones" class="text-[#00D9B5] hover:text-[#00FFC6] underline">Términos y Condiciones</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Progress bar animation
+  const updateProgressBar = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+      progressBar.style.width = `${scrollPercent}%`;
+    }
+  };
+
+  window.addEventListener('scroll', updateProgressBar);
+
+  // Animate sections on scroll
+  gsap.utils.toArray('section').forEach((section: any, index: number) => {
+    gsap.from(section, {
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('back-to-top');
+  backToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

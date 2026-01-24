@@ -18,6 +18,15 @@
     --color-text-primary: #FFFFFF;
     --color-text-secondary: #0F3460;
     
+    /* Kineon Theme Colors */
+    --kineon-turquoise: #00D9B5;
+    --kineon-turquoise-hover: #00FFC6;
+    --kineon-dark-bg: #0A0E1A;
+    --kineon-card-bg: #1A1F2E;
+    --kineon-border: rgba(0, 217, 181, 0.2);
+    --kineon-text-primary: #FFFFFF;
+    --kineon-text-secondary: #94A3B8;
+    
     /* Spacing */
     --section-padding: 5rem;
     --section-padding-mobile: 3rem;
@@ -100,6 +109,58 @@
   .btn-secondary:hover {
     background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
     color: white;
+  }
+
+  /* Kineon Specific Styles */
+  .kineon-body {
+    background: var(--kineon-dark-bg) !important;
+    color: var(--kineon-text-primary) !important;
+    min-height: 100vh;
+  }
+
+  .kineon-card {
+    background: var(--kineon-card-bg) !important;
+    border: 1px solid var(--kineon-border) !important;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+
+  .kineon-gradient-text {
+    background: linear-gradient(135deg, var(--kineon-turquoise), var(--kineon-turquoise-hover)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+
+  .kineon-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: var(--kineon-turquoise);
+    color: var(--kineon-dark-bg);
+  }
+
+  .kineon-btn:hover {
+    background: var(--kineon-turquoise-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 217, 181, 0.3);
+  }
+
+  .kineon-text-primary {
+    color: var(--kineon-text-primary) !important;
+  }
+
+  .kineon-text-secondary {
+    color: var(--kineon-text-secondary) !important;
+  }
+
+  .kineon-turquoise {
+    color: var(--kineon-turquoise) !important;
+  }
+
+  .kineon-turquoise-hover {
+    color: var(--kineon-turquoise-hover) !important;
   }
 }
 
