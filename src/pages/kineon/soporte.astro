@@ -1,0 +1,177 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LanguageToggle from '../../components/kineon/LanguageToggle.astro';
+import { Mail } from 'lucide-astro';
+---
+
+<Layout 
+  title="Kineon - Soporte | Support"
+  description="Centro de soporte de Kineon. Obtén ayuda con tu suscripción, cuenta y más."
+>
+  <div class="bg-[#0A0E1A] min-h-screen text-white">
+    <LanguageToggle />
+    
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 h-1 bg-gray-900 z-40">
+      <div id="progress-bar" class="h-full bg-[#00D9B5] transition-all duration-300" style="width: 0%"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="pt-24 pb-12 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-4 mb-12">
+          <img src="/kineon-logo.svg" alt="Kineon Logo" class="w-12 h-12">
+          <h1 class="text-3xl font-black">Kineon</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-6 pb-20">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Spanish Content -->
+        <div data-lang="es">
+          <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-6">Soporte Kineon</h2>
+            <p class="text-gray-300 leading-relaxed text-lg">¿Necesitas ayuda? Estamos aquí para ti.</p>
+          </section>
+
+          <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-6">Contacto</h3>
+            <div class="bg-[#1A1F2E] border border-[#00D9B5]/20 rounded-2xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 bg-[#00D9B5]/10 rounded-xl flex items-center justify-center">
+                    <Mail class="w-6 h-6 text-[#00D9B5]" />
+                  </div>
+                </div>
+                <div>
+                  <p class="text-gray-300 mb-2"><strong class="text-white">Email:</strong></p>
+                  <a href="mailto:devcarlos93@gmail.com" class="text-[#00D9B5] hover:text-[#00FFC6] underline text-lg">
+                    devcarlos93@gmail.com
+                  </a>
+                  <p class="text-gray-400 mt-3 text-sm">Responderemos tu mensaje en un plazo de 24-48 horas.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8">Preguntas Frecuentes</h3>
+            
+            <div class="space-y-6">
+              <!-- FAQ 1 -->
+              <div class="bg-[#1A1F2E] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3 text-white">¿Cómo funciona Kineon Pro?</h4>
+                <p class="text-gray-300 leading-relaxed">Kineon Pro desbloquea funciones ilimitadas: chat IA, búsquedas inteligentes y listas sin límites. Puedes suscribirte desde la app.</p>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="bg-[#1A1F2E] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3 text-white">¿Cómo cancelo mi suscripción?</h4>
+                <p class="text-gray-300 leading-relaxed">Ve a Ajustes de tu iPhone → Tu nombre → Suscripciones → Kineon → Cancelar suscripción.</p>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="bg-[#1A1F2E] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3 text-white">¿Cómo restauro mi compra?</h4>
+                <p class="text-gray-300 leading-relaxed">Abre Kineon → Perfil → Mejorar. Tu suscripción se restaurará automáticamente.</p>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="bg-[#1A1F2E] border border-gray-800 rounded-2xl p-6">
+                <h4 class="text-xl font-bold mb-3 text-white">¿Mis datos están seguros?</h4>
+                <p class="text-gray-300 leading-relaxed">Sí. No compartimos tu información con terceros. Consulta nuestra <a href="/kineon/politica-de-privacidad" class="text-[#00D9B5] hover:text-[#00FFC6] underline">política de privacidad</a>.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-6">Más Información</h3>
+            <div class="grid gap-4 md:grid-cols-2">
+              <a href="/kineon/politica-de-privacidad" class="bg-[#1A1F2E] border border-gray-800 hover:border-[#00D9B5]/40 rounded-2xl p-6 transition-all">
+                <h4 class="text-xl font-bold mb-2 text-white">Política de Privacidad</h4>
+                <p class="text-gray-400 text-sm">Conoce cómo protegemos tu información personal</p>
+              </a>
+              <a href="/kineon/terminos-y-condiciones" class="bg-[#1A1F2E] border border-gray-800 hover:border-[#00D9B5]/40 rounded-2xl p-6 transition-all">
+                <h4 class="text-xl font-bold mb-2 text-white">Términos y Condiciones</h4>
+                <p class="text-gray-400 text-sm">Lee las condiciones de uso de Kineon</p>
+              </a>
+            </div>
+          </section>
+
+          <!-- Back to Top Button -->
+          <div class="text-center pt-8">
+            <button id="back-to-top" class="bg-[#00D9B5] text-[#0A0E1A] px-8 py-3 rounded-full font-semibold hover:bg-[#00FFC6] transition-all inline-flex items-center gap-2">
+              <span>Volver Arriba</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 15l-6-6-6 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- English Content -->
+        <div data-lang="en" style="display: none;">
+          <div class="text-center py-20">
+            <p class="text-gray-400 text-lg">English version coming soon...</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 px-6">
+      <div class="max-w-3xl mx-auto text-center text-gray-500 text-sm space-y-3">
+        <p>© 2026 Kineon. Todos los derechos reservados.</p>
+        <div class="space-x-4">
+          <a href="/kineon/politica-de-privacidad" class="text-[#00D9B5] hover:text-[#00FFC6] underline">Política de Privacidad</a>
+          <a href="/kineon/terminos-y-condiciones" class="text-[#00D9B5] hover:text-[#00FFC6] underline">Términos y Condiciones</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Progress bar animation
+  const updateProgressBar = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+      progressBar.style.width = `${scrollPercent}%`;
+    }
+  };
+
+  window.addEventListener('scroll', updateProgressBar);
+
+  // Animate sections on scroll
+  gsap.utils.toArray('section').forEach((section: any, index: number) => {
+    gsap.from(section, {
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('back-to-top');
+  backToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

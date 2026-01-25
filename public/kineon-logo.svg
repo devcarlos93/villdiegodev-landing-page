@@ -1,0 +1,17 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="playGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D9B5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Play button triangle -->
+  <path d="M18 12L18 36L36 24L18 12Z" fill="url(#playGradient)" stroke="none"/>
+  <!-- Small dots -->
+  <circle cx="11" cy="14" r="2.5" fill="#00D9B5"/>
+  <circle cx="11" cy="24" r="2.5" fill="#A78BFA"/>
+  <circle cx="11" cy="34" r="2.5" fill="#00D9B5"/>
+  <!-- Lines connecting dots -->
+  <line x1="11" y1="16.5" x2="11" y2="21.5" stroke="#00D9B5" stroke-width="1.5"/>
+  <line x1="11" y1="26.5" x2="11" y2="31.5" stroke="#A78BFA" stroke-width="1.5"/>
+</svg>
