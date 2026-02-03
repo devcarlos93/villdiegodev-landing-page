@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trackio - Soporte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #CDFF00;
+            --primary-dark: #a8d600;
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --border: #2a2a2a;
+            --success: #22c55e;
+            --error: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--bg-dark);
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: var(--bg-dark);
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .contact-email svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .response-time {
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 24px 20px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* Features Grid */
+        .features-section {
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(205, 255, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .feature-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Links Section */
+        .links-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: var(--bg-dark);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .link-item:hover {
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+        }
+
+        .link-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        .link-item span {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer .version {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            background: var(--bg-card);
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: var(--bg-dark);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 16px;
+            }
+
+            .header {
+                margin-bottom: 40px;
+            }
+
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .logo-text {
+                font-size: 26px;
+            }
+
+            .contact-card {
+                padding: 30px 20px;
+            }
+
+            .contact-email {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+
+            .faq-question {
+                padding: 18px 20px;
+                font-size: 15px;
+            }
+
+            .faq-answer-content {
+                padding: 0 20px 18px;
+            }
+
+            .lang-switcher {
+                position: static;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Hidden class for language toggle */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLanguage('es')" id="btn-es">ES</button>
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">T</div>
+                <span class="logo-text">Trackio</span>
+            </div>
+            <h1 class="lang-es">Centro de Soporte</h1>
+            <h1 class="lang-en hidden">Support Center</h1>
+            <p class="lang-es">Estamos aqui para ayudarte</p>
+            <p class="lang-en hidden">We're here to help you</p>
+        </header>
+
+        <!-- Contact Card -->
+        <section class="contact-card">
+            <h2 class="lang-es">¿Necesitas ayuda?</h2>
+            <h2 class="lang-en hidden">Need help?</h2>
+            <p class="lang-es">Envíanos un mensaje y te responderemos lo antes posible</p>
+            <p class="lang-en hidden">Send us a message and we'll get back to you as soon as possible</p>
+            <a href="mailto:support@trackio.app" class="contact-email">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                support@trackio.app
+            </a>
+            <p class="response-time lang-es">Tiempo de respuesta: 24-48 horas</p>
+            <p class="response-time lang-en hidden">Response time: 24-48 hours</p>
+        </section>
+
+        <!-- Features -->
+        <section class="features-section">
+            <h2 class="section-title"><span>#</span> <span class="lang-es">Funcionalidades</span><span class="lang-en hidden">Features</span></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="lang-es">Dashboard</h3>
+                    <h3 class="lang-en hidden">Dashboard</h3>
+                    <p class="lang-es">Visualiza todos tus gastos mensuales en un solo lugar</p>
+                    <p class="lang-en hidden">View all your monthly expenses in one place</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="lang-es">Ahorro</h3>
+                    <h3 class="lang-en hidden">Savings</h3>
+                    <p class="lang-es">Descubre suscripciones que no usas y ahorra dinero</p>
+                    <p class="lang-en hidden">Discover unused subscriptions and save money</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="lang-es">Calendario</h3>
+                    <h3 class="lang-en hidden">Calendar</h3>
+                    <p class="lang-es">Proyeccion de pagos para los proximos 6 meses</p>
+                    <p class="lang-en hidden">Payment projection for the next 6 months</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3 class="lang-es">Recordatorios</h3>
+                    <h3 class="lang-en hidden">Reminders</h3>
+                    <p class="lang-es">Notificaciones antes de cada pago</p>
+                    <p class="lang-en hidden">Notifications before each payment</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="lang-es">Compartir</h3>
+                    <h3 class="lang-en hidden">Sharing</h3>
+                    <p class="lang-es">Gestiona suscripciones compartidas con familia o amigos</p>
+                    <p class="lang-en hidden">Manage shared subscriptions with family or friends</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="lang-es">IA</h3>
+                    <h3 class="lang-en hidden">AI</h3>
+                    <p class="lang-es">Analisis inteligente para optimizar tus gastos</p>
+                    <p class="lang-en hidden">Smart analysis to optimize your spending</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title"><span>?</span> <span class="lang-es">Preguntas Frecuentes</span><span class="lang-en hidden">Frequently Asked Questions</span></h2>
+
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="lang-es">¿Como añado una suscripcion?</span>
+                    <span class="lang-en hidden">How do I add a subscription?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <span class="lang-es">Toca el boton "+" en la pantalla principal. Puedes elegir una plantilla predefinida (Netflix, Spotify, etc.) o crear una suscripcion personalizada. Completa los detalles como nombre, precio, categoria y fecha de pago.</span>
+                        <span class="lang-en hidden">Tap the "+" button on the main screen. You can choose a predefined template (Netflix, Spotify, etc.) or create a custom subscription. Fill in the details like name, price, category, and payment date.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="lang-es">¿Como funciona el analisis de ahorro?</span>
+                    <span class="lang-en hidden">How does the savings analysis work?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <span class="lang-es">Trackio analiza automaticamente tus suscripciones basandose en tu uso. Identifica servicios que no has usado recientemente, duplicados por categoria, y periodos de prueba proximos a terminar. Te sugerimos acciones como cancelar, pausar o revisar.</span>
+                        <span class="lang-en hidden">Trackio automatically analyzes your subscriptions based on your usage. It identifies services you haven't used recently, category duplicates, and trial periods about to expire. We suggest actions like cancel, pause, or review.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="lang-es">¿Puedo compartir suscripciones con mi familia?</span>
+                    <span class="lang-en hidden">Can I share subscriptions with my family?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <span class="lang-es">Si, con el plan Pro puedes marcar suscripciones como compartidas, añadir miembros, asignar porcentajes de pago y rastrear quien ha pagado su parte. Ideal para planes familiares de Netflix, Spotify, etc.</span>
+                        <span class="lang-en hidden">Yes, with the Pro plan you can mark subscriptions as shared, add members, assign payment percentages, and track who has paid their share. Ideal for family plans like Netflix, Spotify, etc.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="lang-es">¿Como cancelo mi suscripcion a Trackio Pro?</span>
+                    <span class="lang-en hidden">How do I cancel my Trackio Pro subscription?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <span class="lang-es">Las suscripciones se gestionan a traves de tu cuenta de Apple. Ve a Configuracion > [Tu nombre] > Suscripciones en tu iPhone, busca Trackio y selecciona "Cancelar suscripcion". Mantendras el acceso hasta el final del periodo de facturacion.</span>
+                        <span class="lang-en hidden">Subscriptions are managed through your Apple account. Go to Settings > [Your name] > Subscriptions on your iPhone, find Trackio and select "Cancel subscription". You'll keep access until the end of the billing period.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="lang-es">¿Mis datos estan seguros?</span>
+                    <span class="lang-en hidden">Is my data secure?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <span class="lang-es">Absolutamente. Usamos encriptacion de extremo a extremo y nunca vendemos ni compartimos tu informacion personal. Tus datos financieros estan protegidos con los mas altos estandares de seguridad. Consulta nuestra Politica de Privacidad para mas detalles.</span>
+                        <span class="lang-en hidden">Absolutely. We use end-to-end encryption and never sell or share your personal information. Your financial data is protected with the highest security standards. Check our Privacy Policy for more details.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span class="lang-es">¿Como restauro mis compras?</span>
+                    <span class="lang-en hidden">How do I restore my purchases?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <span class="lang-es">Ve a Menu > Configuracion > Restaurar compras. Asegurate de estar conectado con la misma cuenta de Apple con la que realizaste la compra original. Si tienes problemas, contactanos.</span>
+                        <span class="lang-en hidden">Go to Menu > Settings > Restore purchases. Make sure you're signed in with the same Apple account you used for the original purchase. If you have issues, contact us.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Links Section -->
+        <section class="links-section">
+            <h2 class="section-title"><span>@</span> <span class="lang-es">Enlaces Utiles</span><span class="lang-en hidden">Useful Links</span></h2>
+            <div class="links-grid">
+                <a href="/trackio/privacidad" class="link-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span class="lang-es">Politica de Privacidad</span>
+                    <span class="lang-en hidden">Privacy Policy</span>
+                </a>
+                <a href="/trackio/terminos-y-condiciones" class="link-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span class="lang-es">Terminos y Condiciones</span>
+                    <span class="lang-en hidden">Terms & Conditions</span>
+                </a>
+                <a href="mailto:support@trackio.app" class="link-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span class="lang-es">Contacto</span>
+                    <span class="lang-en hidden">Contact</span>
+                </a>
+                <a href="https://apps.apple.com/app/trackio" class="link-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span class="lang-es">Descargar App</span>
+                    <span class="lang-en hidden">Download App</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Trackio. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en hidden">All rights reserved.</span></p>
+            <p class="version">Version 1.0.0</p>
+            <div class="social-links">
+                <a href="https://twitter.com/trackioapp" class="social-link" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/trackioapp" class="social-link" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Language Toggle
+        function setLanguage(lang) {
+            const esElements = document.querySelectorAll('.lang-es');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'es') {
+                esElements.forEach(el => el.classList.remove('hidden'));
+                enElements.forEach(el => el.classList.add('hidden'));
+                btnEs.classList.add('active');
+                btnEn.classList.remove('active');
+                document.documentElement.lang = 'es';
+            } else {
+                esElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                btnEn.classList.add('active');
+                btnEs.classList.remove('active');
+                document.documentElement.lang = 'en';
+            }
+
+            // Save preference
+            localStorage.setItem('trackio-lang', lang);
+        }
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('trackio-lang');
+            if (savedLang) {
+                setLanguage(savedLang);
+            } else {
+                // Detect browser language
+                const browserLang = navigator.language.substring(0, 2);
+                setLanguage(browserLang === 'es' ? 'es' : 'en');
+            }
+        });
+    </script>
+</body>
+</html>
