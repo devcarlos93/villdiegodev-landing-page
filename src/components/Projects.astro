@@ -1,107 +1,154 @@
 ---
-import { ExternalLink, Github } from 'lucide-astro';
+import { ExternalLink, ChevronRight, ChevronLeft } from 'lucide-astro';
 
 const projects = [
   {
     title: "Turnelo Admin",
-    description: "App administrativa para salones de belleza  y barberías | Agenda de citas, POS y programa de lealtad",
-    image: 'https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/agenda-turnelo.png',
-    technologies: ["Angular", "PirmeNG", "Twilio", "Supabase", "Vercel"],
+    description: "App administrativa para salones de belleza y barberías | Agenda de citas, POS y programa de lealtad",
+    image: 'https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/agenda-turnelo-removebg-preview.png',
+    technologies: ["Angular", "PirmeNG", "Supabase"],
     liveUrl: "https://admin.turneloapp.com/auth/login",
     githubUrl: "https://github.com/devcarlos93/admin-turnelo"
   },
   {
-    title: "Landing page TurneloApp",
+    title: "TurneloApp Landing",
     description: "Landing page de lanzamiento para el producto turnelo app.",
-    image: "https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/landing%20turnelo.png",
-    technologies: ["Vue.js", "Astrojs", "Tailwind CSS"],
+    image: "https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/tunerlo-admin-tablet-removebg-preview.png",
+    technologies: ["Astro", "Vue.js", "Tailwind CSS"],
     liveUrl: "https://www.turneloapp.com/",
     githubUrl: "https://github.com/devcarlos93/landing-turnelo"
   },
   {
-    title: "Gasto Guard",
+    title: "Contaboot",
     description: "Sistema de gestión y control de gastos personales.",
-    image: "https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/gasguard.png",
-    technologies: ["Angular", "PrimeNG", "Firebase"],
-    liveUrl: "https://gastoguard-staging.netlify.app/",
-    githubUrl: "#"
+    image: "https://awqytuhclhkvvecvcfrm.supabase.co/storage/v1/object/public/turnerlo-landing/contaboot-removebg-preview.png",
+    technologies: ["Angular", "NestJS", "Supabase"],
+    liveUrl: "https://contaboot.app/",
+    githubUrl: "https://github.com/devcarlos93/contabotapp"
   }
-
 ];
 ---
 
-<section id="proyectos" class="py-20 relative">
-  <div class="section-container">
-    <!-- Section Title -->
-    <div class="text-center mb-16 section-title">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">
-        Mis <span class="gradient-text">Proyectos</span>
-      </h2>
-      <p class="text-xl text-white/60">Trabajos destacados</p>
-    </div>
+<section id="proyectos" class="py-24 relative overflow-hidden">
+  <div class="section-container relative">
+    
+    <!-- Big Glass Panel framing everything -->
+    <div class="relative bg-white/[0.02] backdrop-blur-2xl border border-white/[0.08] rounded-[2rem] p-6 lg:p-12 shadow-2xl overflow-visible">
+      
+      <!-- Top Title Inside Glass -->
+      <div class="mb-10 pl-2">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-2">
+          Proyectos <span class="gradient-text">Destacados</span>
+        </h2>
+        <p class="text-lg text-white/50">Selección exclusiva de mis mejores trabajos</p>
+      </div>
 
-    <!-- Projects Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid">
-      {projects.map((project, index) => (
-        <div class="project-card" data-index={index}>
-          <div class="card-glass rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 h-full flex flex-col">
-            <!-- Project Image -->
-            <div class="relative overflow-hidden aspect-video bg-gradient-to-br from-gray-900 to-gray-800">
-              <img 
-                src={project.image} 
-                alt={project.title}
-                class="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div class="flex gap-3">
-                  <a 
-                    href={project.liveUrl} 
-                    class="p-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors"
-                    aria-label="Ver proyecto"
-                  >
-                    <ExternalLink size={20} />
+      <!-- Navigation Ears / Tabs (Only visible on MD and UP) -->
+      <button 
+        id="prev-btn"
+        class="absolute -left-10 lg:-left-12 top-1/2 -translate-y-1/2 w-11 lg:w-14 h-24 lg:h-32 bg-[#1A1A2E]/80 backdrop-blur-3xl border border-white/[0.08] border-r-0 rounded-l-[2rem] flex items-center justify-center group z-30 shadow-[-10px_0_30px_rgba(0,0,0,0.3)] hidden md:flex cursor-pointer transition-all duration-300 hover:bg-[#1A1A2E] outline-none focus:outline-none"
+        aria-label="Proyecto anterior"
+      >
+        <div class="w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+          <ChevronLeft size={20} class="text-[#1a1a2e] ml-[-2px]" />
+        </div>
+      </button>
+
+      <button 
+        id="next-btn"
+        class="absolute -right-10 lg:-right-12 top-1/2 -translate-y-1/2 w-11 lg:w-14 h-24 lg:h-32 bg-[#1A1A2E]/80 backdrop-blur-3xl border border-white/[0.08] border-l-0 rounded-r-[2rem] flex items-center justify-center group z-30 shadow-[10px_0_30px_rgba(0,0,0,0.3)] hidden md:flex cursor-pointer transition-all duration-300 hover:bg-[#1A1A2E] outline-none focus:outline-none"
+        aria-label="Siguiente proyecto"
+      >
+        <div class="w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+          <ChevronRight size={20} class="text-[#1a1a2e] mr-[-2px]" />
+        </div>
+      </button>
+
+      <!-- Slider Container -->
+      <div 
+        id="projects-slider"
+        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-12 pt-4 -mx-4 px-4 md:mx-0 md:px-0"
+      >
+        {projects.map((project) => (
+          <div class="w-[85vw] sm:w-[350px] md:w-[400px] shrink-0 snap-center">
+            
+            <div class="bg-[#121622]/90 backdrop-blur-xl rounded-3xl border border-white/[0.06] overflow-hidden flex flex-col h-full hover:border-white/[0.15] hover:shadow-[0_20px_40px_rgba(0,217,181,0.15)] transition-all duration-500 hover:-translate-y-2 group">
+              
+              <!-- Image Section (Dual-tone Canvas) -->
+              <div class="relative w-full aspect-[16/10] bg-gradient-to-b from-[#F8F9FA] to-[#E9ECEF] flex items-end justify-center pt-8 px-8 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  class="w-full h-full object-contain object-bottom filter drop-shadow-2xl transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                <!-- Floating Label -->
+                <div class="absolute top-5 left-5 bg-[#121622] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full flex items-center gap-2 shadow-xl z-10 transition-transform duration-500 group-hover:scale-105">
+                  <div class="w-2 h-2 rounded-full bg-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.8)]"></div>
+                  <span class="text-xs font-bold tracking-wide text-white">{project.technologies[0]}</span>
+                </div>
+              </div>
+
+              <!-- Content Section -->
+              <div class="p-8 flex flex-col flex-1 relative z-20">
+                <!-- Highlight Value / Pill -->
+                <div class="inline-block border border-white/10 bg-white/5 rounded-full px-4 py-1.5 mb-4 text-sm font-semibold max-w-fit text-cyan-400">
+                   {project.technologies[1] || 'Aplicación Web'}
+                </div>
+                
+                <h3 class="text-xl font-bold mb-2 text-white">{project.title}</h3>
+                
+                <p class="text-white/50 text-sm mb-6 flex-1 line-clamp-3">
+                  {project.description}
+                </p>
+
+                <!-- Footer (Links pretending to be distance) -->
+                <div class="flex items-center justify-between border-t border-white/[0.05] pt-4 mt-auto">
+                  
+                  <a href={project.liveUrl} target="_blank" class="flex items-center gap-2 text-white/60 hover:text-cyan-400 transition-colors text-sm font-medium group">
+                    <ExternalLink size={16} class="group-hover:scale-110 transition-transform" />
+                    Ver en vivo
                   </a>
-                  <a 
-                    href={project.githubUrl} 
-                    class="p-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors"
-                    aria-label="Ver código"
-                  >
-                    <Github size={20} />
-                  </a>
+                  
+                  {project.githubUrl !== "#" && (
+                    <a href={project.githubUrl} target="_blank" class="flex items-center gap-1 text-cyan-500 hover:text-cyan-400 transition-colors text-sm font-bold">
+                      Ver Código
+                      <ChevronRight size={16} />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
-
-            <!-- Project Info -->
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-xl font-bold mb-2">{project.title}</h3>
-              <p class="text-white/60 text-sm mb-4 flex-1">
-                {project.description}
-              </p>
-
-              <!-- Technologies -->
-              <div class="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
-        </div>
-      ))}
-    </div>
-
-    <!-- CTA -->
-    <div class="text-center mt-12">
-      <a href="#" class="btn-primary inline-flex items-center gap-2">
-        Ver Más Proyectos
-        <ExternalLink size={18} />
-      </a>
+        ))}
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('projects-slider');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    if (slider && prevBtn && nextBtn) {
+      const getScrollAmount = () => {
+        // Obtenemos el tamaño de la primera tarjeta en la galería para calcular cuánto saltar
+        const card = slider.firstElementChild as HTMLElement;
+        return card ? card.clientWidth + 24 : 400; // 24px equivale al gap-6
+      };
+
+      prevBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      });
+    }
+  });
+</script>
 
 <style>
   #proyectos {
@@ -110,5 +157,14 @@ const projects = [
       rgba(255, 107, 53, 0.05) 50%,
       rgba(26, 26, 46, 1) 100%
     );
+  }
+
+  /* Hide Scrollbar perfectly across browsers */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 </style>

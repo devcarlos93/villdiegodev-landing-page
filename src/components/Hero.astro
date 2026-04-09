@@ -1,36 +1,48 @@
 ---
-import { ChevronDown } from 'lucide-astro';
-import { HeroGeometric } from './ui/shape-landing-hero';
+import { ChevronDown } from "lucide-astro";
+import { HeroGeometric } from "./ui/shape-landing-hero";
 ---
 
 <HeroGeometric client:load>
   <div class="section-container relative z-10 w-full">
+    <!-- Scattered Code Particles -->
+    <div class="pointer-events-none absolute inset-0 -z-10 select-none hidden sm:block">
+      <div class="absolute top-[10%] left-[5%] opacity-10 font-mono text-xl text-white">&lt;html&gt;</div>
+      <div class="absolute top-[30%] left-[8%] opacity-[0.08] font-mono text-2xl text-white">&lt;body&gt;</div>
+      <div class="absolute top-[60%] left-[6%] opacity-[0.06] font-mono text-3xl text-white">&lt;h1&gt;</div>
+      <div class="absolute top-[20%] right-[30%] opacity-[0.04] font-mono text-2xl text-white">&lt;div /&gt;</div>
+      <div class="absolute bottom-[25%] left-[20%] opacity-[0.05] font-mono text-2xl text-white">&lt;/h1&gt;</div>
+      <div class="absolute bottom-[10%] left-[30%] opacity-[0.06] font-mono text-xl text-white">&lt;p&gt;</div>
+      <div class="absolute bottom-[15%] right-[10%] opacity-10 font-mono text-xl text-white">&lt;/html&gt;</div>
+    </div>
+
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Content -->
       <div class="space-y-6 hero-content">
         <div class="space-y-2">
           <p class="text-lg md:text-xl text-white/60 font-medium">Hola, soy</p>
-          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight"
+          >
             Carlos
             <span class="block gradient-text">Villadiego</span>
           </h1>
         </div>
-        
+
         <p class="text-xl md:text-2xl text-white/80 font-medium">
-          Front End Developer
+          Full Stack Developer
         </p>
-        
+
         <p class="text-lg text-white/60 max-w-xl">
-          Desarrollador frontend especializado en Angular e Ionic. Construyendo aplicaciones empresariales robustas con código limpio y arquitectura mantenible. Explorando Flutter y potenciando mi flujo de trabajo con AI.
+          Desarrollador full stack especializado en Angular, NestJS e Ionic. Construyendo
+          aplicaciones web y empresariales robustas con código limpio y arquitectura
+          mantenible desde el frontend hasta el backend. Explorando Flutter y potenciando mi flujo de trabajo con
+          AI.
         </p>
 
         <div class="flex flex-wrap gap-4 pt-4">
-          <a href="#proyectos" class="btn-primary">
-            Ver Proyectos
-          </a>
-          <a href="#perfil" class="btn-secondary">
-            Conocer Más
-          </a>
+          <a href="#proyectos" class="btn-primary"> Ver Proyectos </a>
+          <a href="#perfil" class="btn-secondary"> Conocer Más </a>
         </div>
 
         <!-- Stats -->
@@ -51,37 +63,58 @@ import { HeroGeometric } from './ui/shape-landing-hero';
       </div>
 
       <!-- Profile Image -->
-      <div class="flex justify-center hero-image">
-        <div class="relative">
+      <div class="flex justify-center items-end hero-image mt-8 md:mt-0">
+        <div class="relative w-full max-w-[35rem] lg:max-w-[42rem] lg:-mb-20">
           <!-- Strong Cyan Glow on Right Side -->
-          <div class="absolute top-0 -right-20 w-96 h-96 bg-gradient-to-l from-cyan-500 via-cyan-400 to-transparent rounded-full blur-3xl opacity-60"></div>
-          
+          <div
+            class="absolute top-1/4 -right-10 w-80 h-80 bg-gradient-to-l from-cyan-500 via-cyan-400 to-transparent rounded-full blur-3xl opacity-40 -z-10"
+          >
+          </div>
+
           <!-- Orange Glow on Left -->
-          <div class="absolute top-0 -left-20 w-80 h-80 bg-gradient-to-r from-orange-500 via-orange-400 to-transparent rounded-full blur-3xl opacity-40"></div>
-          
-          <!-- Image Container with Shadow -->
-          <div class="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
-            <img 
-              src="/profile.png" 
-              alt="Carlos Villadiego"
-              class="w-full h-full object-cover"
-            />
-            <!-- Cyan Light Overlay on Image -->
-            <div class="absolute inset-0 bg-gradient-to-l from-cyan-500/30 via-transparent to-transparent"></div>
+          <div
+            class="absolute bottom-1/4 -left-10 w-72 h-72 bg-gradient-to-r from-orange-500 via-orange-400 to-transparent rounded-full blur-3xl opacity-30 -z-10"
+          >
+          </div>
+
+          <!-- Floating Icons -->
+          <!-- Angular (Posicionado abajo a la izquierda para disimular el recorte) -->
+          <div class="absolute bottom-[12%] -left-2 md:-left-8 w-20 h-20 md:w-28 md:h-28 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-full shadow-2xl flex items-center justify-center z-20" style="animation: float-gentle 4s ease-in-out infinite;">
+            <img src="https://cdn.simpleicons.org/angular/white" alt="Angular Logo" class="w-10 h-10 md:w-14 md:h-14 opacity-80" />
           </div>
           
-          <!-- Decorative Rings -->
-          <div class="absolute -inset-4 border-2 border-cyan-400/30 rounded-full"></div>
-          <div class="absolute -inset-8 border border-orange-400/20 rounded-full"></div>
+          <!-- NestJS -->
+          <div class="absolute bottom-[20%] -right-8 md:-right-12 w-24 h-24 md:w-32 md:h-32 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-full shadow-2xl flex items-center justify-center z-20" style="animation: float-gentle 5s ease-in-out infinite reverse;">
+            <img src="https://cdn.simpleicons.org/nestjs/white" alt="NestJS Logo" class="w-12 h-12 md:w-16 md:h-16 opacity-80" />
+          </div>
+
+          <!-- Flutter -->
+          <div class="absolute top-[30%] right-[-5%] md:right-[0%] w-16 h-16 md:w-20 md:h-20 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-full shadow-2xl flex items-center justify-center z-20" style="animation: float-gentle 6s ease-in-out infinite 1s;">
+            <img src="https://cdn.simpleicons.org/flutter/white" alt="Flutter Logo" class="w-8 h-8 md:w-10 md:h-10 opacity-80" />
+          </div>
+
+          <!-- Image with transparent background and edge fade masks -->
+          <img
+            src="/profile3.png"
+            alt="Carlos Villadiego"
+            class="w-full h-auto object-bottom object-contain relative z-10 drop-shadow-[0_0_40px_rgba(0,100,200,0.15)] hover:scale-[1.03] origin-bottom transition-transform duration-500"
+            style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%), linear-gradient(to top, transparent 0%, black 10%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, black 15%), linear-gradient(to top, transparent 0%, black 10%); mask-composite: intersect;"
+          />
         </div>
       </div>
     </div>
   </div>
 
   <!-- Scroll Indicator -->
-  <div slot="after" class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator z-20">
+  <div
+    slot="after"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator z-20"
+  >
     <a href="#perfil" class="scroll-button group">
-      <ChevronDown size={20} class="text-white/80 group-hover:text-white transition-colors" />
+      <ChevronDown
+        size={20}
+        class="text-white/80 group-hover:text-white transition-colors"
+      />
     </a>
   </div>
 </HeroGeometric>
@@ -109,13 +142,14 @@ import { HeroGeometric } from './ui/shape-landing-hero';
     transform: translateY(-4px) scale(1.1);
     background: rgba(255, 107, 53, 0.1);
     border-color: rgba(255, 107, 53, 0.3);
-    box-shadow: 
+    box-shadow:
       0 8px 24px rgba(255, 107, 53, 0.25),
       0 0 40px rgba(255, 107, 53, 0.15);
   }
 
   @keyframes float-gentle {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {

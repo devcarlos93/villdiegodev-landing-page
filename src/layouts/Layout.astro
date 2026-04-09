@@ -5,8 +5,8 @@ interface Props {
 }
 
 const { 
-  title = "Carlos Villadiego - Front End Developer | Angular & Ionic Specialist", 
-  description = "Desarrollador Frontend especializado en Angular e Ionic. Construyendo aplicaciones empresariales robustas con código limpio y arquitectura mantenible." 
+  title = "Carlos Villadiego - Full Stack Developer | Angular, NestJS & Ionic Specialist", 
+  description = "Desarrollador Full Stack especializado en Angular, NestJS e Ionic. Construyendo aplicaciones empresariales robustas con código limpio y arquitectura mantenible." 
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -24,7 +24,7 @@ const socialImage = new URL('/profile.png', Astro.site);
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content="Carlos Villadiego" />
-    <meta name="keywords" content="Carlos Villadiego, Frontend Developer, Angular Developer, Ionic Developer, Desarrollador Frontend, Angular, Ionic, TypeScript, PrimeNG, Flutter, Montería Colombia" />
+    <meta name="keywords" content="Carlos Villadiego, Full Stack Developer, Frontend Developer, Backend Developer, Angular, NestJS, Ionic, TypeScript, Flutter, Montería Colombia" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -66,13 +66,13 @@ const socialImage = new URL('/profile.png', Astro.site);
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Carlos Villadiego",
-        "jobTitle": "Front End Developer",
-        "description": "Desarrollador Frontend especializado en Angular e Ionic",
+        "jobTitle": "Full Stack Developer",
+        "description": "Desarrollador Full Stack especializado en Angular, NestJS e Ionic",
         "url": "https://villadiegocode.netlify.app",
         "image": "https://villadiegocode.netlify.app/profile.png",
         "sameAs": [
-          "https://github.com/villadiego2",
-          "https://www.linkedin.com/in/carlos-villadiego/"
+          "https://github.com/devcarlos93",
+          "https://www.linkedin.com/in/carlos-villadiego-16103a282/"
         ],
         "address": {
           "@type": "PostalAddress",
